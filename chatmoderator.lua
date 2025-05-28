@@ -1,7 +1,7 @@
 
 
 -- List of prohibited words
-local motsInterdits = {"example 1" , "example 2"}
+local forbiddenwords = {"example 1" , "example 2"}
 
 -- Function to detect player messages
 hook.Add("PlayerSay", "ModérationChat", function(ply, text, team)
@@ -9,7 +9,7 @@ hook.Add("PlayerSay", "ModérationChat", function(ply, text, team)
     local texteMinuscules = string.lower(text)
 
     -- Checks if the word appears in the table
-    for _, motInterdit in ipairs(motsInterdits) do
+    for _, motInterdit in ipairs(forbiddenwords) do
         if string.find(texteMinuscules, motInterdit) then
             -- Use the correct function according to your admin mode
             if ULib and ULib.ban then
